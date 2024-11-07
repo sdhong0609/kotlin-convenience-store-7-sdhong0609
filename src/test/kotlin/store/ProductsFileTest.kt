@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 
 class ProductsFileTest {
 
-    private val productFile = ProductsFile()
+    private val productFile = ProductsFile(PromotionsFile().mapToPromotions(PromotionsFile().readFile()))
 
     @BeforeEach
     fun setUp() {

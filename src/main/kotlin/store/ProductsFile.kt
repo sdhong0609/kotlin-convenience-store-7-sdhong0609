@@ -2,7 +2,7 @@ package store
 
 import java.io.File
 
-class ProductsFile {
+class ProductsFile(private val promotions: List<Promotion>) {
 
     fun readFile(): List<String> {
         return File("src/main/resources/products.md").readLines().drop(1)
@@ -29,6 +29,16 @@ class ProductsFile {
 
     fun updateFile() {
         writeFile("name,price,quantity,promotion\n" + updatedProducts().joinToString("\n") { it.joinToString(",") } + "\n")
+    }
+
+    fun mapToProducts(rawProducts: List<String>): List<Product> {
+        return rawProducts.map { rawProduct ->
+            val product = rawProduct.split(",")
+            val (name, price, quantity, promotionName) = product
+            val promotion = promotions.find { it.name == promotionName }
+
+            Product(name, price.toInt(), quantity.toInt(), promotion)
+        }
     }
 
     fun initFile() {
