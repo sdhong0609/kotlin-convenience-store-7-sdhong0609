@@ -1,8 +1,7 @@
-package store
+package store.model
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import store.model.SelectedProduct
 
 class SelectedProductTest {
 

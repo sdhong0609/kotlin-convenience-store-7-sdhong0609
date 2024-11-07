@@ -1,9 +1,7 @@
-package store
+package store.model
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import store.model.Product
-import store.model.Promotion
 
 class ProductTest {
 
