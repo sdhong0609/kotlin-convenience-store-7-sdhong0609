@@ -1,4 +1,4 @@
-package store
+package store.model.file
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test

@@ -1,4 +1,4 @@
-package store
+package store.model.file
 
 import store.model.Promotion
 import java.io.File

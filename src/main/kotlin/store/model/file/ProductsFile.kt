@@ -1,4 +1,4 @@
-package store
+package store.model.file
 
 import store.model.Product
 import store.model.Promotion
