@@ -5,12 +5,12 @@ import java.io.File
 
 class PromotionsFile {
 
-    fun readFile(): List<String> {
+    private fun readFile(): List<String> {
         return File("src/main/resources/promotions.md").readLines().drop(1)
     }
 
-    fun mapToPromotions(rawPromotions: List<String>): List<Promotion> {
-        return rawPromotions.map { it.toPromotion() }
+    fun mapToPromotions(): List<Promotion> {
+        return readFile().map { it.toPromotion() }
     }
 
     private fun String.toPromotion(): Promotion {
