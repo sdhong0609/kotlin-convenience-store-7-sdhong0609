@@ -1,5 +1,6 @@
 package store
 
+import store.model.Promotion
 import java.io.File
 
 class PromotionsFile {

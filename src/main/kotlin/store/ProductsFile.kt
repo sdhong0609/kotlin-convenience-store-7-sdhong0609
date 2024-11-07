@@ -1,5 +1,7 @@
 package store
 
+import store.model.Product
+import store.model.Promotion
 import java.io.File
 
 class ProductsFile(private val promotions: List<Promotion>) {

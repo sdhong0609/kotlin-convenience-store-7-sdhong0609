@@ -1,6 +1,6 @@
 package store.view
 
-import store.Product
+import store.model.Product
 
 class OutputView {
 
@@ -15,6 +15,7 @@ class OutputView {
 
     fun printProducts(products: List<Product>) {
         products.forEach { printProduct(it) }
+        println()
     }
 
     private fun printProduct(product: Product) {
