@@ -1,13 +1,11 @@
 package store
 
 class Product(
-    private val name: String,
-    private val price: Int,
-    private val quantity: Int,
-    private val promotion: Promotion?
+    val name: String,
+    val price: Int,
+    val quantity: Int,
+    val promotion: Promotion?
 ) {
-    fun getName() = name
-    fun getPrice() = price
-    fun getQuantity() = quantity
-    fun getPromotion() = promotion
+    fun hasQuantity() = quantity > 0
+    fun isPromotionAvailable() = promotion != null
 }

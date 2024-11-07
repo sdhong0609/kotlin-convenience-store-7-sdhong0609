@@ -18,10 +18,10 @@ class OutputView {
     }
 
     private fun printProduct(product: Product) {
-        val name = product.getName()
-        val price = product.getPrice()
-        val quantity = if (product.hasQuantity()) "${product.getQuantity()}개" else "재고 없음"
-        val promotionName = if (product.isPromotionAvailable()) product.getPromotion()?.name else ""
+        val name = product.name
+        val price = product.price
+        val quantity = if (product.hasQuantity()) "${product.quantity}개" else "재고 없음"
+        val promotionName = if (product.isPromotionAvailable()) product.promotion?.name else ""
 
         println("- $name ${formatPrice(price)} $quantity $promotionName")
     }
@@ -50,17 +50,17 @@ class OutputView {
         println("==============W 편의점================")
         println("상품명\t\t수량\t금액")
         buyProducts.forEach {
-            println("${it.getName()}\t\t${it.getQuantity()}\t${formatPrice(it.getPrice() * it.getQuantity())}")
+            println("${it.name}\t\t${it.quantity}\t${formatPrice(it.price * it.quantity)}")
         }
         println("=============증\t정===============")
         getProducts.forEach {
-            println("${it.getName()}\t\t${it.getQuantity()}")
+            println("${it.name}\t\t${it.quantity}")
         }
         println("====================================")
-        println("총구매액\t\t${buyProducts.sumOf { it.getQuantity() }}\t${formatPrice(buyProducts.sumOf { it.getPrice() * it.getQuantity() })}")
+        println("총구매액\t\t${buyProducts.sumOf { it.quantity }}\t${formatPrice(buyProducts.sumOf { it.price * it.quantity })}")
         println("행사할인\t\t\t${formatPrice(-1000)}")
         println("멤버십할인\t\t\t${formatPrice(-3000)}")
-        println("내실돈\t\t\t ${formatPrice(buyProducts.sumOf { it.getPrice() * it.getQuantity() } - 1000 - 3000)}")
+        println("내실돈\t\t\t ${formatPrice(buyProducts.sumOf { it.price * it.quantity } - 1000 - 3000)}")
         println()
     }
 
