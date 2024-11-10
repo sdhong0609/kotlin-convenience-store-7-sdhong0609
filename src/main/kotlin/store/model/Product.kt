@@ -7,5 +7,5 @@ class Product(
     val promotion: Promotion?
 ) {
     fun hasQuantity() = quantity > 0
-    fun isPromotionAvailable() = promotion != null
+    fun hasPromotion() = promotion != null
 }

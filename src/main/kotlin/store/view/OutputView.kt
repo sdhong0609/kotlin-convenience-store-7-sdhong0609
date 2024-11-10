@@ -22,7 +22,7 @@ class OutputView {
         val name = product.name
         val price = product.price
         val quantity = if (product.hasQuantity()) "${product.quantity}개" else "재고 없음"
-        val promotionName = if (product.isPromotionAvailable()) product.promotion?.name else ""
+        val promotionName = if (product.hasPromotion()) product.promotion?.name else ""
 
         println("- $name ${formatPrice(price)} $quantity $promotionName")
     }
